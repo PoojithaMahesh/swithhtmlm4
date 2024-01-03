@@ -3,33 +3,61 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  
-  <servlet>
-  <servlet-name>sign</servlet-name>
-  <servlet-class>studentm2withhtml.controller.SignUpServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  <servlet-name>sign</servlet-name>
-  <url-pattern>/signup</url-pattern>
-  </servlet-mapping>
-  
-  
-    <servlet>
-  <servlet-name>log</servlet-name>
-  <servlet-class>studentm2withhtml.controller.LoginServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  <servlet-name>log</servlet-name>
-  <url-pattern>/login</url-pattern>
-  </servlet-mapping>
-  
-  
-  
-  
-  
-  
-  
+	<display-name>Archetype Created Web Application</display-name>
+
+	<servlet>
+		<servlet-name>sign</servlet-name>
+		<servlet-class>studentm2withhtml.controller.SignUpServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sign</servlet-name>
+		<url-pattern>/signup</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>log</servlet-name>
+		<servlet-class>studentm2withhtml.controller.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>log</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>sel</servlet-name>
+		<servlet-class>studentm2withhtml.controller.SelectServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sel</servlet-name>
+		<url-pattern>/select</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>del</servlet-name>
+		<servlet-class>studentm2withhtml.controller.DeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>del</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>up</servlet-name>
+		<servlet-class>studentm2withhtml.controller.UpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>up</servlet-name>
+		<url-pattern>/update</url-pattern>
+	</servlet-mapping>
+
+
+
 </web-app>

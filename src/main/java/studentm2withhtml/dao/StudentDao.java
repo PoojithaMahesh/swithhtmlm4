@@ -29,6 +29,44 @@ public List<Student> getAllStudents() {
 	return students;
 }
 
+public Student findStudentById(int id) {
+	EntityManager entityManager=getEntityManager();
+	Student student=entityManager.find(Student.class, id);
+	return student;
+	
+}
+
+public Student deleteStudentById(int id) {
+	EntityManager entityManager=getEntityManager();
+	Student student=entityManager.find(Student.class, id);
+	if(student!=null) {
+		EntityTransaction entityTransaction=entityManager.getTransaction();
+		entityTransaction.begin();
+		entityManager.remove(student);
+		entityTransaction.commit();
+		return student;
+	}else {
+//		id is not present
+		return null;
+	}
+}
+
+public Student updateStudent(int id, Student student) {
+	EntityManager entityManager=getEntityManager();
+	Student dbStudent=entityManager.find(Student.class, id);
+	if(dbStudent!=null) {
+		EntityTransaction entityTransaction=entityManager.getTransaction();
+		entityTransaction.begin();
+		student.setId(id);
+		entityManager.merge(student);
+		entityTransaction.commit();
+		return student;
+	}else {
+//		id is not present
+		return null;
+	}
+}
+
 
 
 
