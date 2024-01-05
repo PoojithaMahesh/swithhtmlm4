@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.GenericServlet;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -38,16 +39,15 @@ public class LoginServlet extends HttpServlet{
 //			when the email exist
 			if(password.equals(studentPassword)) {
 //				its a valid email and password
-				PrintWriter printWriter=resp.getWriter();
-				printWriter.print("LOGIN SUCCESSS");
+				resp.sendRedirect("https://trainer.qspiders.com/trainer-home");
 			}else {
-				PrintWriter printWriter=resp.getWriter();
-				printWriter.print("Invalid Password");
+				RequestDispatcher dispatcher=req.getRequestDispatcher("login.html");
+				dispatcher.include(req, resp);
 			}
 		}else {
 //			that email doesnot exist
-			PrintWriter printWriter=resp.getWriter();
-			printWriter.print("Sorry Invalid Email");
+			RequestDispatcher dispatcher=req.getRequestDispatcher("login.html");
+			dispatcher.include(req, resp);
 		}
 		
 		
